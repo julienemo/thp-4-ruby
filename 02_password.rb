@@ -35,7 +35,16 @@ def log_in
     puts "Mot de passe incorrecte. Resaisie"
     saisie = gets.chomp
   end
+end
+
+def perform
+  log_in
   welcome_screen
 end
 
-log_in
+perform
+
+# would like to know how to isolate sign_in
+# currently included in log_in
+# coz didn't find solution to use global var
+# without calling the puts part of the func
