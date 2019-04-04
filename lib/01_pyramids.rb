@@ -23,13 +23,21 @@ def half_pyramid
   puts ""
 end
 
-# half_pyramid
-
 def ask_nb
   puts"Combien d'étages veux-tu?"
   return gets.chomp.to_i
 end
 
+def get_impair
+  puts"Combien d'étages veux-tu?"
+  puts"On accepte les chiffres impairs pas trop grand."
+  nb = gets.chomp.to_i
+  while (nb < 0) or (nb >12) or (nb%2 ==0)
+    puts"Mais alors j'ai dit, NOMBRE IMPAIR PAS TROP GRAND."
+    nb = gets.chomp.to_i
+  end
+  return nb
+end
 
 def full_pyramid(n)
   i = 1
@@ -39,4 +47,19 @@ def full_pyramid(n)
   end
 end
 
-full_pyramid(ask_nb)
+def full_pyramidiv(n)
+  i = n - 1
+  while i > 0
+    puts " "*(n-i)+"#"*(2*i-1)+" "*(n-i)
+    i -= 1
+  end
+end
+
+
+def wtf_pyramid(n)
+  m = (n+1)/2
+  full_pyramid(m)
+  full_pyramidiv(m)
+end
+
+wtf_pyramid(get_impair)
