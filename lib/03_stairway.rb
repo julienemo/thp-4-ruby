@@ -23,7 +23,7 @@ end
 def perform
 	i = 0
 	k=1
-	while i<3
+	while i<10
 		puts "voici la tour #{k}"
 		puts "ta position est #{i}"
 		nb = rnb
@@ -35,6 +35,28 @@ def perform
 		puts "maintenant ta position est #{i}"
 		k += 1
 	end
+	return k
 end
 
-perform
+
+def karray
+	kr=[]
+	100.times do 
+		kr<<perform
+	end
+	return kr
+end
+
+def average_finish_time
+	sum = 0
+	the_array = karray
+	the_array.each do |item|
+	sum += item
+	end
+	n = karray.length
+	avg = sum / n
+	puts"-----"
+	puts "Pour cette fois-ci, le jeu prend en moyen #{avg} tours pour finir les 10 marches"
+end
+
+average_finish_time
