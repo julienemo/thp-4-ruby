@@ -42,7 +42,7 @@ end
 def full_pyramid(n)
   i = 1
   while i <= n
-    puts " "*(n-i)+"#"*(2*i-1)+" "*(n-i)
+    puts " "*(n-i)+"#"*(2*i-1)
     i += 1
   end
 end
@@ -58,8 +58,10 @@ end
 
 def wtf_pyramid(n)
   m = (n+1)/2
+  puts ""
   full_pyramid(m)
   full_pyramidiv(m)
+  puts ""
 end
 
 wtf_pyramid(get_impair)
